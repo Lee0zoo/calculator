@@ -49,8 +49,16 @@ public class App {
             System.out.println("결과 : " + result);
 
             // 결과를 배열에 입력
-            rList[index] = result;
-            index++;
+            if(index == 10) {
+                // 배열이 가득 찬 경우, 가장 먼저 저장된 result를 삭제한 뒤 새로운  result 입력
+                for(int i = 1; i<10; i++) {
+                    rList[i-1] = rList[i];
+                }
+                rList[9] = result;
+            } else {
+                rList[index] = result;
+                index++;
+            }
 
             // 추가 연산 여부를 묻는 내용 출력
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
