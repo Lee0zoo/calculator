@@ -7,10 +7,13 @@ public class App {
     public static void main(String[] args) {
         // 사용자로부터 입력을 받기 위한 Scanner 선언
         Scanner sc = new Scanner(System.in);
-        // 결과를 저장할 배열
-        int[] rList = new int[10];
-        // 결과 배열의 인덱스
-        int index = 0;
+//        // 결과를 저장할 배열
+//        int[] rList = new int[10];
+//        // 결과 배열의 인덱스
+//        int index = 0;
+
+        // 결과를 저장할 리스트
+        ArrayList<Integer> rList = new ArrayList<>();
 
         // 특정 조건을 만족할 때까지 사용자로부터 계속 입력을 받음
         while(true) {
@@ -48,16 +51,37 @@ public class App {
             // 결과 출력
             System.out.println("결과 : " + result);
 
-            // 결과를 배열에 입력
-            if(index == 10) {
-                // 배열이 가득 찬 경우, 가장 먼저 저장된 result를 삭제한 뒤 새로운  result 입력
-                for(int i = 1; i<10; i++) {
-                    rList[i-1] = rList[i];
-                }
-                rList[9] = result;
-            } else {
-                rList[index] = result;
-                index++;
+//            // 결과를 배열에 입력
+//            if(index == 10) {
+//                // 배열이 가득 찬 경우, 가장 먼저 저장된 result를 삭제한 뒤 새로운  result 입력
+//                for(int i = 1; i<10; i++) {
+//                    rList[i-1] = rList[i];
+//                }
+//                rList[9] = result;
+//            } else {
+//                rList[index] = result;
+//                index++;
+//            }
+
+            // 결과를 리스트에 저장
+            rList.add(result);
+
+            // 연산 결과 삭제 의사를 묻는 내용 출력
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String rmv = sc.next();
+
+            // 사용자가 remove를 입력했다면, 가장 먼저 입력된 연산 결과를 삭제
+            if(rmv.equals("remove")) {
+                rList.remove(0);
+            }
+
+            // 저장된 연산 결과 출력 의사를 묻는 내용 출력
+            System.out.println("저장된 연산 결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String ck = sc.next();
+
+            // 사용자가 inquiry를 입력했다면, 연산 결과 전부 조회
+            if(ck.equals("inquiry")) {
+                rList.forEach(data -> System.out.println(data + " "));
             }
 
             // 추가 연산 여부를 묻는 내용 출력
