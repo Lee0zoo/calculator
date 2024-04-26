@@ -4,7 +4,11 @@ import java.util.*;
 
 public class Calculator {
     // 외부에서 접근 불가능한 컬렉션 필드 선언 & 생성
-    private ArrayList<Integer> rList = new ArrayList<>();
+    private ArrayList<Integer> rList;
+    // 기본 생성자를 통해 ArrayList가 초기화 되도록 설정
+    public Calculator() {
+        rList = new ArrayList<>();
+    }
 
     public int calculate(int num1, int num2, char operater) {
         int result = 0;
