@@ -38,9 +38,12 @@ public class Calculator {
     }
 
     // Setter
-    public void setRList(String rmv) {
-        if(rmv.equals("remove")) {
-            this.rList.remove(0);
-        }
+    public void setRList(ArrayList<Integer> rList) {
+        this.rList = rList;
+    }
+
+    // rList 데이터 삭제 메서드
+    public void removeResult() {
+        this.rList.remove(0);
     }
 }

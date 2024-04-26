@@ -81,7 +81,9 @@ public class App {
 //            if(rmv.equals("remove")) {
 //                rList.remove(0);
 //            }
-            calc.setRList(rmv);
+            if(rmv.equals("remove")) {
+                calc.removeResult();
+            }
 
             // 저장된 연산 결과 출력 의사를 묻는 내용 출력
             System.out.println("저장된 연산 결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
