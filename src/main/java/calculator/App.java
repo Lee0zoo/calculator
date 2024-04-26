@@ -12,6 +12,9 @@ public class App {
 //        // 결과 배열의 인덱스
 //        int index = 0;
 
+        // Calculator 인스턴스 생성
+        Calculator calc = new Calculator();
+
         // 결과를 저장할 리스트
         ArrayList<Integer> rList = new ArrayList<>();
 
@@ -27,27 +30,31 @@ public class App {
 
             int result = 0; // 연산 결과를 담을 변수
 
-            // 사칙연산 기호에 따라 다른 연산을 적용함
-            switch (operator) {
-                case '+' : result = num1 + num2;
-                    break;
-                case '-' : result = num1 - num2;
-                    break;
-                case '*' : result = num1 * num2;
-                    break;
-                case '/' :
-                    if(num2>0) {
-                        result = num1 / num2;
-                    } else {
-                        // num2가 0이면 연산 시 오류가 발생하기 때문에, 잘못된 입력임을 알리는 메세지 출력
-                        System.out.println("나눗셈 연산에서 분모(두 번째 정수)에 0이 입력될 수 없습니다.");
-                    }
-                    break;
-                default :
-                    // 사칙연산 기호가 아닌 입력이 이루어질 경우 잘못된 입력임을 알리는 메세지 출력
-                    System.out.println("욜바른 연산 기호를 입력해 주세요.");
-                    break;
-            }
+//            // 사칙연산 기호에 따라 다른 연산을 적용함
+//            switch (operator) {
+//                case '+' : result = num1 + num2;
+//                    break;
+//                case '-' : result = num1 - num2;
+//                    break;
+//                case '*' : result = num1 * num2;
+//                    break;
+//                case '/' :
+//                    if(num2>0) {
+//                        result = num1 / num2;
+//                    } else {
+//                        // num2가 0이면 연산 시 오류가 발생하기 때문에, 잘못된 입력임을 알리는 메세지 출력
+//                        System.out.println("나눗셈 연산에서 분모(두 번째 정수)에 0이 입력될 수 없습니다.");
+//                    }
+//                    break;
+//                default :
+//                    // 사칙연산 기호가 아닌 입력이 이루어질 경우 잘못된 입력임을 알리는 메세지 출력
+//                    System.out.println("욜바른 연산 기호를 입력해 주세요.");
+//                    break;
+//            }
+
+            // 연산 수행
+            calc.calculate(num1, num2, operator);
+
             // 결과 출력
             System.out.println("결과 : " + result);
 
