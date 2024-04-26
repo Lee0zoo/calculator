@@ -95,7 +95,8 @@ public class App {
 //            }
 
             if(ck.equals("inquiry")) {
-                calc.getRList().forEach(data -> System.out.println(data + " "));
+                calc.inquiryList();
+                System.out.println();
             }
 
             // 추가 연산 여부를 묻는 내용 출력

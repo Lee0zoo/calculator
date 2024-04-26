@@ -8,21 +8,20 @@ public class Calculator {
 
     public int calculate(int num1, int num2, char operater) {
         int result = 0;
-        try {
-            if(operater == '+') {
-                result = num1 + num2;
-            } else if(operater == '-') {
-                result = num1 - num2;
-            } else if(operater == '*') {
-                result = num1 * num2;
-            } else if(operater == '/') {
-                try {
-                    result = num1 / num2;
-                } catch (ArithmeticException e) {
-                    System.out.println("나눗셈 연산에서 분모(두 번째 정수)에 0이 입력될 수 없습니다.");
-                }
+
+        if (operater == '+') {
+            result = num1 + num2;
+        } else if (operater == '-') {
+            result = num1 - num2;
+        } else if (operater == '*') {
+            result = num1 * num2;
+        } else if (operater == '/') {
+            try {
+                result = num1 / num2;
+            } catch (ArithmeticException e) {
+                System.out.println("나눗셈 연산에서 분모(두 번째 정수)에 0이 입력될 수 없습니다.");
             }
-        } catch (Exception e) {
+        } else {
             System.out.println("올바른 연산 기호를 입력해 주세요.");
         }
 
@@ -45,5 +44,9 @@ public class Calculator {
     // rList 데이터 삭제 메서드
     public void removeResult() {
         this.rList.remove(0);
+    }
+
+    public void inquiryList() {
+        rList.forEach(data -> System.out.print(data + " "));
     }
 }
