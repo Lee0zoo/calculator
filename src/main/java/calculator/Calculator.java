@@ -15,7 +15,5 @@ public abstract class Calculator {
         this.fList.remove(0);
     }
 
-    public void inquiryList() {
-        fList.forEach(data -> System.out.print(data + " "));
-    }
+    abstract void inquiryList();
 }

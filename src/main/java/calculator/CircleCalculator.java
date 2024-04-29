@@ -20,6 +20,7 @@ public class CircleCalculator extends Calculator {
     }
 
     // 원의 넓이 결과 조회 오버라이드
+    @Override
     public void inquiryList() {
         rList.forEach(data -> System.out.print(data + " "));
     }
