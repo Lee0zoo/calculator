@@ -31,6 +31,7 @@ public class App {
                 System.out.print("사칙연산 기호를 입력하세요 : ");
                 char operator = sc.next().charAt(0); // charAt()을 통해 char 타입으로 연산 기호 저장
 
+
                 // 연산 수행 + 결과 result에 저장
                 double result = ac.calculate(num1, num2, operator);
                 System.out.println("결과 : " + result);
